@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordion With HTML and CSS</title>
+	<style>
+	::selection{
+		background: grey;
+		color: white;
+	}
+		details{
+			font-family: sans-serif;
+			width: 60%;
+			background: #333;
+			color: white;
+			border: 1px solid;
+			padding: 10px 30px 10px 10px;
+			font-size: 15px;
+		}
+		summary{
+			font-weight: bold;
+			font-size: 3em;
+			list-style:none;
+			cursor: pointer;
+			position: relative;
+		}
+		details > summary::-webkit-details-marker{
+			display: none;
+		}
+		p{
+			height: 150px;
+			padding: 1em;
+			overflow: auto;
+		}
+		.close{
+			display: none;
+		}
+		summary > .open{
+			position: absolute;
+			right: 0;
+		}
+		details[open] summary{
+			border-bottom: 1px solid #fff;
+		}
+		details[open] summary .open{
+			display: none;
+		}
+		details[open] summary .close{
+			display: inline;
+			position: absolute;
+			right: 0;
+		}
+		details[open] summary ~ * {
+  animation: sweep 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes sweep {
+  0%    {
+  	transform: scale(0);
+  }
+  30%,50%,70%{
+  	transform: scale3d(2.5, 1.2, 0.3);
+  }
+  100%  {
+  	transform: scale(1);
+  }
+}
+	</style>
+</head>
+<body>
+	<h2>Accordion With HTML and CSS</h2>
+
+	<details>
+		<summary>FAQ <span class="open">+</span> <span class="close">-</span></summary>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, dignissimos unde omnis, doloribus amet nemo ratione! Laborum suscipit, ea iure.</p>
+	</details>
+	<details>
+		<summary>About US <span class="open">+</span> <span class="close">-</span></summary>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, dignissimos unde omnis, doloribus amet nemo ratione! Laborum suscipit, ea iure.</p>
+	</details>
+	<details>
+		<summary>Contact Us <span class="open">+</span> <span class="close">-</span></summary>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque fugit molestiae sequi quam voluptatem, perferendis dolorum, quibusdam quasi recusandae hic voluptas perspiciatis distinctio expedita quis, porro temporibus maxime provident qui, nulla nam dolorem mollitia rem? Cumque ullam corporis cum reprehenderit fuga quod illum explicabo quaerat, ratione autem porro iste, sunt, hic iusto totam ex quam laboriosam accusamus eveniet quae rerum. Ut fugiat nostrum iste officiis architecto autem alias libero in, nisi quaerat molestiae sequi, ex esse! Ducimus facere recusandae veniam dolor vel pariatur incidunt sint tenetur eum deserunt eaque labore quae reprehenderit reiciendis ea, voluptates ipsum. Beatae praesentium, eius rem veniam, magni hic</p>
+	</details>
+</body>
+</html>
